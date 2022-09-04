@@ -1,0 +1,13 @@
+version: "3.9"
+   
+services:
+  api:
+    image: apitest:1
+    ports:
+      - "8081:8080"
+  web:
+    image: flaskapp:1
+    ports:
+      - 8080:8080
+    depends_on:
+      - api
